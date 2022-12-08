@@ -54,7 +54,7 @@ The application serves to search prices of cryptocurrencies in USD. Functionalit
 
 1. - Clone the project
 ```
-git clone git@github.com:Chris7T/crypto-coin.git
+git clone https://github.com/Chris7T/crypto-coin.git
 ```
 2. - Enter the project folder
 ```
@@ -72,15 +72,19 @@ docker exec -it app bash
 ```
 composer i
 ```
-6. - Generate the API Key
+6. - Generate .env
+```
+cp .env.example .env
+```
+7. - Generate the API Key
 ```
 php artisan key:generate
 ```
-7. - Run the migrations
+8. - Run the migrations
 ```
 php artisan migrate
 ```
-8. - Run the tests
+9. - Run the tests
 ```
 php artisan test
 ```
