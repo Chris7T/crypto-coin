@@ -60,31 +60,27 @@ git clone git@github.com:Chris7T/crypto-coin.git
 ```
 cd crypton-coin
 ```
-3. - Install the composer
-```
-composer install
-```
-4. - Up the containers
+3. - Up the containers
 ```
 docker-compose up -d
 ```
-5. - Enter the workspace
+4. - Enter the workspace
 ```
 docker exec -it app bash
 ```
-6. - Enter the workspace
+5. - Install the composer
 ```
 composer i
 ```
-7. - Generate the API Key
+6. - Generate the API Key
 ```
 php artisan key:generate
 ```
-8. - Run the migrations
+7. - Run the migrations
 ```
 php artisan migrate
 ```
-9. - Run the tests
+8. - Run the tests
 ```
 php artisan test
 ```
