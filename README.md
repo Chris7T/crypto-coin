@@ -54,27 +54,27 @@ The application serves to search prices of cryptocurrencies in USD. Functionalit
 
 1. - Clone the project
 ```
-git clone git@github.com:Chris7T/crypto-coin.git
+git clone https://github.com/Chris7T/crypto-coin.git
 ```
 2. - Enter the project folder
 ```
 cd crypton-coin
 ```
-3. - Install the composer
-```
-composer install
-```
-4. - Up the containers
+3. - Up the containers
 ```
 docker-compose up -d
 ```
-5. - Enter the workspace
+4. - Enter the workspace
 ```
 docker exec -it app bash
 ```
-6. - Enter the workspace
+5. - Install the composer
 ```
 composer i
+```
+6. - Generate .env
+```
+cp .env.example .env
 ```
 7. - Generate the API Key
 ```
