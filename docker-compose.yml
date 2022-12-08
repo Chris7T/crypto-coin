@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/www
+    environment:
+      - DB_CONNECTION=pgsql
+      - DB_HOST=db
+      - DB_DATABASE=cryptocoin
+      - DB_USERNAME=cryptocoin
+      - DB_PASSWORD=cryptocoin
+    networks:
+      - app-network
+
+  web:
+    container_name: web
+    image: nginx:latest
+    volumes:
+      - ./:/var/www
+      - ./docker/nginx/:/etc/nginx/conf.d/
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+    networks:
+      - app-network
+
+  redis:
+    container_name: redis
+    image: redis:latest
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+
+  db:
+    container_name: db
+    image: postgres:latest
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=cryptocoin
+      - POSTGRES_USER=cryptocoin
+      - POSTGRES_PASSWORD=cryptocoin
+    networks:
+      - app-network
+
+volumes:
+  redis-data:
+  postgres-data:
+
+networks:
+  app-network:
