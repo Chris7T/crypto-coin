@@ -64,17 +64,17 @@ cd crypton-coin
 ```
 composer install
 ```
-4. - Enter the laradock folder
+4. - Up the containers
 ```
-cd laradock
+docker-compose up -d
 ```
-5. - Up the containers
+5. - Enter the workspace
 ```
-docker-compose up -d nginx redis mysql
+docker exec -it app bash
 ```
 6. - Enter the workspace
 ```
-docker exec --user=laradock -it crypto_docker_workspace_1 bash
+composer i
 ```
 7. - Generate the API Key
 ```
